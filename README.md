@@ -53,9 +53,10 @@ As more contacts are added to the "far" k-bucket and it reaches its capacity, it
   * [new KBucket(options)](#new-kbucketoptions)
   * [kBucket.add(contact, \[bitIndex\])](#kbucketaddcontact-bitindex)
   * [kBucket.closest(contact, n, \[bitIndex\])](#kbucketclosestcontact-n-bitindex)
-  * [kBucket.count()](#kbucketcount)
   * [kBucket.remove(contact, \[bitIndex\])](#kbucketremovecontact-bitindex)
+  * [kBucket.count()](#kbucketcount)
   * [kBucket.toArray()](#kbuckettoarray)
+  * [kBucket.get(id)](#kbucketget)
   * [Event 'ping'](#event-ping)
 
 #### KBucket.distance(firstId, secondId)
@@ -133,6 +134,13 @@ _NOTE: `kBucket.indexOf(contact)` does not compare `contact.vectorClock`_
   * Return: _Object_ The k-bucket itself.
 
 Removes the `contact`.
+
+#### kBucket.get(id)
+
+  * `id`: _Buffer_ The ID of the `contact` to fetch
+  * Return: _Object_ The `contact` if available, otherwise null
+
+Retrieves the `contact`.
 
 #### kBucket.splitAndAdd(contact, [bitIndex])
 
